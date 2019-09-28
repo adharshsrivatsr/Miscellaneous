@@ -8,6 +8,6 @@ if [ $state != "charging" ]; then
 	val=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0  | grep 'percentage' | awk '{print substr($2,1,length($2)-1)}')
 	thresh=20
 	if [ $val -le $thresh ]; then
-		/usr/bin/zenity --error --text="Battery level low!" --title="Warning!"
+		/usr/bin/zenity --error --text="Battery level low!" --title="Warning"
 	fi
 fi
